@@ -1,0 +1,57 @@
+{
+    "name": "@snjyor/binance-mcp",
+    "version": "1.0.0",
+    "description": "Binance Cryptocurrency Market Data MCP Service",
+    "main": "dist/index.js",
+    "bin": "dist/index.js",
+    "type": "module",
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "scripts": {
+        "dev": "node --loader ts-node/esm src/index.ts",
+        "demo": "node --loader ts-node/esm src/demo.ts",
+        "build": "tsc",
+        "prepublishOnly": "npm run build",
+        "start": "node dist/index.js",
+        "inspector": "npx @modelcontextprotocol/inspector node dist/index.js"
+    },
+    "keywords": [
+        "cryptocurrency",
+        "binance",
+        "api",
+        "mcp",
+        "modelcontextprotocol",
+        "ai-tools",
+        "cursor-ide",
+        "claude",
+        "crypto-api"
+    ],
+    "author": "snjyor",
+    "license": "MIT",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.9.0",
+        "axios": "^1.6.7",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/snjyor/binance-mcp.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "bugs": {
+        "url": "https://github.com/snjyor/binance-mcp/issues"
+    },
+    "homepage": "https://github.com/snjyor/binance-mcp#readme"
+}
