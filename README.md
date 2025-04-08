@@ -2,9 +2,6 @@
 
 [Model Context Protocol](https://modelcontextprotocol.io) service for accessing Binance cryptocurrency market data.
 
-**Cursor IDE Demo**
-
-(Add your demo video link here)
 
 ## Overview
 
@@ -56,7 +53,7 @@ In Cursor IDE:
 1. Go to `Cursor Settings` > `MCP`
 2. Click `+ Add New MCP Service`
 3. Fill in the form:
-   - Name: `Binance` (or any name you prefer)
+   - Name: `binance`
    - Type: `command`
    - Command: `npx -y @snjyor/binance-mcp@latest`
 
@@ -153,4 +150,4 @@ npx @modelcontextprotocol/inspector node dist/index.js
 
 ## License
 
-[MIT](LICENSE) 
+[Apache 2.0](LICENSE) 
