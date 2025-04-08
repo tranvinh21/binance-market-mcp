@@ -48,7 +48,7 @@ Through this MCP service, you can obtain the following information:
 Use npx to run the MCP service:
 
 ```bash
-npx -y @snjyor/cryptocurrency-mcp@latest
+npx -y @snjyor/binance-mcp@latest
 ```
 
 In Cursor IDE:
@@ -56,9 +56,9 @@ In Cursor IDE:
 1. Go to `Cursor Settings` > `MCP`
 2. Click `+ Add New MCP Service`
 3. Fill in the form:
-   - Name: `Cryptocurrency Market` (or any name you prefer)
+   - Name: `Binance` (or any name you prefer)
    - Type: `command`
-   - Command: `npx -y @snjyor/cryptocurrency-mcp@latest`
+   - Command: `npx -y @snjyor/binance-mcp@latest`
 
 **Project Installation**
 
@@ -67,11 +67,11 @@ Add a `.cursor/mcp.json` file to your project:
 ```json
 {
   "mcpServers": {
-    "cryptocurrency": {
+    "binance": {
       "command": "npx",
       "args": [
         "-y",
-        "@snjyor/cryptocurrency-mcp@latest"
+        "@snjyor/binance-mcp@latest"
       ]
     }
   }
@@ -80,7 +80,7 @@ Add a `.cursor/mcp.json` file to your project:
 
 **Usage**
 
-After configuration, the cryptocurrency market data tools will be automatically available to Cursor AI agents:
+After configuration, the Binance market data tools will be automatically available to Cursor AI agents:
 
 1. The tool will be listed under `Available Tools` in the MCP settings
 2. Agents will automatically use it when relevant
@@ -91,11 +91,11 @@ After configuration, the cryptocurrency market data tools will be automatically 
 ```json
 {
   "mcpServers": {
-    "cryptocurrency": {
+    "binance": {
       "command": "npx",
       "args": [
         "-y",
-        "@snjyor/cryptocurrency-mcp@latest"
+        "@snjyor/binance-mcp@latest"
       ]
     }
   }
