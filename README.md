@@ -1,4 +1,5 @@
 # Binance Cryptocurrency MCP
+[![smithery badge](https://smithery.ai/badge/@snjyor/binance-mcp-data)](https://smithery.ai/server/@snjyor/binance-mcp-data)
 
 [Model Context Protocol](https://modelcontextprotocol.io) service for accessing Binance cryptocurrency market data.
 
