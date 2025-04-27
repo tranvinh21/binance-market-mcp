@@ -1,8 +1,11 @@
 # Binance Cryptocurrency MCP
 [![smithery badge](https://smithery.ai/badge/@snjyor/binance-mcp-data)](https://smithery.ai/server/@snjyor/binance-mcp-data)
 
-[Model Context Protocol](https://modelcontextprotocol.io) service for accessing Binance cryptocurrency market data.
+<a href="https://glama.ai/mcp/servers/@snjyor/binance-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@snjyor/binance-mcp/badge" alt="Binance Cryptocurrency MCP server" />
+</a>
 
+[Model Context Protocol](https://modelcontextprotocol.io) service for accessing Binance cryptocurrency market data.
 
 ## Overview
 
