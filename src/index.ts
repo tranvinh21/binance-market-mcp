@@ -7,6 +7,8 @@ import axios from "axios";
 
 const BASE_URL = "https://api.binance.com";
 
+const proxyURL = process.env.HTTP_PROXY || process.env.HTTPS_PROXY;
+
 function registerTools(server: McpServer) {
     // Order Book
     server.tool(
@@ -21,7 +23,8 @@ function registerTools(server: McpServer) {
                     params: {
                         symbol: args.symbol,
                         limit: args.limit
-                    }
+                    },
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -48,7 +51,8 @@ function registerTools(server: McpServer) {
                     params: {
                         symbol: args.symbol,
                         limit: args.limit
-                    }
+                    },
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -80,7 +84,8 @@ function registerTools(server: McpServer) {
                     },
                     headers: {
                         "X-MBX-APIKEY": process.env.BINANCE_API_KEY || ""
-                    }
+                    },
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -113,7 +118,8 @@ function registerTools(server: McpServer) {
                         startTime: args.startTime,
                         endTime: args.endTime,
                         limit: args.limit
-                    }
+                    },
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -148,7 +154,8 @@ function registerTools(server: McpServer) {
                         endTime: args.endTime,
                         timeZone: args.timeZone,
                         limit: args.limit
-                    }
+                    },
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -183,7 +190,8 @@ function registerTools(server: McpServer) {
                         endTime: args.endTime,
                         timeZone: args.timeZone,
                         limit: args.limit
-                    }
+                    },
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -208,7 +216,8 @@ function registerTools(server: McpServer) {
                 const response = await axios.get(`${BASE_URL}/api/v3/avgPrice`, {
                     params: {
                         symbol: args.symbol
-                    }
+                    },
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -239,7 +248,8 @@ function registerTools(server: McpServer) {
                 }
 
                 const response = await axios.get(`${BASE_URL}/api/v3/ticker/24hr`, {
-                    params
+                    params,
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -274,7 +284,8 @@ function registerTools(server: McpServer) {
                 if (args.type) params.type = args.type;
 
                 const response = await axios.get(`${BASE_URL}/api/v3/ticker/tradingDay`, {
-                    params
+                    params,
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -305,7 +316,8 @@ function registerTools(server: McpServer) {
                 }
 
                 const response = await axios.get(`${BASE_URL}/api/v3/ticker/price`, {
-                    params
+                    params,
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -336,7 +348,8 @@ function registerTools(server: McpServer) {
                 }
 
                 const response = await axios.get(`${BASE_URL}/api/v3/ticker/bookTicker`, {
-                    params
+                    params,
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -371,7 +384,8 @@ function registerTools(server: McpServer) {
                 if (args.type) params.type = args.type;
 
                 const response = await axios.get(`${BASE_URL}/api/v3/ticker`, {
-                    params
+                    params,
+                    proxy: getProxy(),
                 });
                 return {
                     content: [{ type: "text", text: JSON.stringify(response.data, null, 2) }]
@@ -384,6 +398,17 @@ function registerTools(server: McpServer) {
             }
         }
     );
+}
+
+function getProxy():any {
+    const proxy: any = {}
+    if (proxyURL) {
+        const urlInfo = new URL(proxyURL);
+        proxy.host = urlInfo.hostname;  // 注意是 hostname，不是 host（host 是包含端口的）
+        proxy.port = urlInfo.port;
+        proxy.protocol = urlInfo.protocol.replace(":", ""); // 去掉末尾冒号，比如 http:
+    }
+    return proxy
 }
 
 async function main() {
