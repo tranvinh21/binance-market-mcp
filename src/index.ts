@@ -404,9 +404,9 @@ function getProxy():any {
     const proxy: any = {}
     if (proxyURL) {
         const urlInfo = new URL(proxyURL);
-        proxy.host = urlInfo.hostname;  // 注意是 hostname，不是 host（host 是包含端口的）
+        proxy.host = urlInfo.hostname;
         proxy.port = urlInfo.port;
-        proxy.protocol = urlInfo.protocol.replace(":", ""); // 去掉末尾冒号，比如 http:
+        proxy.protocol = urlInfo.protocol.replace(":", "");
     }
     return proxy
 }
