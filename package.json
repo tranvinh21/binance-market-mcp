@@ -4,7 +4,6 @@
     "description": "Binance Cryptocurrency Market Data MCP Service",
     "main": "dist/index.js",
     "bin": "dist/index.js",
-    "type": "module",
     "files": [
         "dist",
         "LICENSE",
@@ -34,9 +33,12 @@
     "dependencies": {
         "@modelcontextprotocol/sdk": "^1.13.3",
         "axios": "^1.10.0",
+        "cors": "^2.8.5",
+        "express": "^5.1.0",
         "zod": "^3.22.4"
     },
     "devDependencies": {
+        "@types/express": "^5.0.3",
         "ts-node": "^10.9.2",
         "typescript": "^5.3.3"
     },
