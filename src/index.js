@@ -38,7 +38,7 @@ function registerTools(server) {
             symbol: args.symbol,
             limit: args.limit,
           },
-          proxy: getProxy(),
+          // proxy: getProxy(),
         });
         return {
           content: [
@@ -126,7 +126,7 @@ function registerTools(server) {
             headers: {
               "X-MBX-APIKEY": process.env.BINANCE_API_KEY || "",
             },
-            proxy: getProxy(),
+            // proxy: getProxy(),
           }
         );
         return {
@@ -177,7 +177,7 @@ function registerTools(server) {
             endTime: args.endTime,
             limit: args.limit,
           },
-          proxy: getProxy(),
+          // proxy: getProxy(),
         });
         return {
           content: [
@@ -230,7 +230,7 @@ function registerTools(server) {
             timeZone: args.timeZone,
             limit: args.limit,
           },
-          proxy: getProxy(),
+          // proxy: getProxy(),
         });
         return {
           content: [
@@ -283,7 +283,7 @@ function registerTools(server) {
             timeZone: args.timeZone,
             limit: args.limit,
           },
-          proxy: getProxy(),
+          // proxy: getProxy(),
         });
         return {
           content: [
@@ -316,7 +316,7 @@ function registerTools(server) {
           params: {
             symbol: args.symbol,
           },
-          proxy: getProxy(),
+          // proxy: getProxy(),
         });
         return {
           content: [
@@ -361,7 +361,7 @@ function registerTools(server) {
 
         const response = await axios.get(`${BASE_URL}/api/v3/ticker/24hr`, {
           params,
-          proxy: getProxy(),
+          // proxy: getProxy(),
         });
         return {
           content: [
@@ -415,7 +415,7 @@ function registerTools(server) {
           `${BASE_URL}/api/v3/ticker/tradingDay`,
           {
             params,
-            proxy: getProxy(),
+            // proxy: getProxy(),
           }
         );
         return {
@@ -461,7 +461,7 @@ function registerTools(server) {
 
         const response = await axios.get(`${BASE_URL}/api/v3/ticker/price`, {
           params,
-          proxy: getProxy(),
+          // proxy: getProxy(),
         });
         return {
           content: [
@@ -508,7 +508,7 @@ function registerTools(server) {
           `${BASE_URL}/api/v3/ticker/bookTicker`,
           {
             params,
-            proxy: getProxy(),
+            // proxy: getProxy(),
           }
         );
         return {
@@ -564,7 +564,7 @@ function registerTools(server) {
 
         const response = await axios.get(`${BASE_URL}/api/v3/ticker`, {
           params,
-          proxy: getProxy(),
+          //  proxy: getProxy(),
         });
         return {
           content: [
